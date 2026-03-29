@@ -1,7 +1,8 @@
 resource "aws_launch_template" "ec2_instance" {
   name_prefix   = "ponni-web-launch-template"
   image_id      = data.aws_ami.amazon_linux.id
-  instance_type = var.instance_type["prod"]
+  #instance_type = var.instance_type["prod"]
+  instance_type = "t2.large"
   update_default_version = true #we are upding the default version
 
   key_name               = "ponni"
